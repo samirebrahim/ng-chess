@@ -1,0 +1,12 @@
+<div id="myBoard">
+  <table>
+    <tr *ngFor="let row of rows">
+      <td (click)="cellClicked($event)" [id]="columns[i]+row" [ngClass]="{'white': i%2 == row%2 }" *ngFor="let col of columns; let i = index "
+        class="square black">
+        <span class="cellNum" *ngIf="i == 0">{{row}}</span>
+        <span class="cellChar" *ngIf="row == 1">{{col}}</span>
+
+      </td>
+    </tr>
+  </table>
+</div>
